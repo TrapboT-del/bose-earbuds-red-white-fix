@@ -1,0 +1,14 @@
+{
+  "product": "Bose Sport Earbuds（小鲨鱼一代）",
+  "codename": "revel",
+  "pid": "16429 (0x402D)",
+  "file": "revel_2.0.7-18670+fb87694.bin",
+  "versionInfo": "2.0.7-18670+fb87694",
+  "size": 6144812,
+  "crc32": "0X3A15D305",
+  "sha256": "2b1abec709151d3aecaf2106dc16f0d1bb86223376ae971fab61c073210e4367",
+  "format": "Qualcomm APPUHDR5 升级包（文件头 APPUHDR5，内含 PRODUCT:Revel）",
+  "source": "https://ota.cdn.bose.io/0b47ab9d-32e6-4cb7-b9a3-210904a4ffbe.bin/0b47ab9d-32e6-4cb7-b9a3-210904a4ffbe.bin",
+  "downloaded": "2026-10-28",
+  "verified": "大小与 CRC32 均与 Bose 云端返回值一致；同日用此版本重刷成功"
+}

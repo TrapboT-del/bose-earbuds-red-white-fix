@@ -94,7 +94,7 @@ def find_device(allow_any):
             break
         if i == 0:
             print(f"No earbuds detected yet (error {error}). Make sure the case is connected by USB, "
-                  "both earbuds are in the case and the lid is open. Waiting...")
+                  "both earbuds are in the case and the lid is closed. Waiting...")
         time.sleep(5)
     else:
         sys.exit("No Bose earbuds detected within 2 minutes. Check the connection and try again.")
@@ -147,7 +147,7 @@ def flash(info, fw):
             fileSize=meta["length"],
             callback="BoseUpdater.remoteCallback",
             token=token())
-    print("\nFlashing started. It takes about 40-60 minutes. Do NOT unplug, close the lid "
+    print("\nFlashing started. It takes about 40-60 minutes. Do NOT unplug, open the lid "
           "or let the computer sleep!\n")
     last, started, misses = None, False, 0
     while True:
@@ -196,7 +196,7 @@ def main():
         print("\n[--dry-run] Detection only, nothing was flashed.")
         return
     if not args.yes:
-        ans = input("\nFlash now? Close any btu.bose.com browser tabs, then type YES to continue: ")
+        ans = input("\nFlash now? Type YES to continue (btu.bose.com can stay open to watch progress): ")
         if ans.strip() != "YES":
             print("Cancelled.")
             return

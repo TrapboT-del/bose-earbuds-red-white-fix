@@ -19,8 +19,8 @@ It then asks the **Bose Updater** running on your computer to flash it. Both the
 
 1. Python 3 (https://www.python.org; on Windows tick "Add Python to PATH" during install). No third-party packages needed.
 2. Bose Updater: open https://btu.bose.com in a browser and install it when prompted. Make sure the Bose icon is in the system tray.
-3. Put both earbuds in the charging case, **keep the lid open**, and connect the case to the computer with a USB cable.
-4. Recommended: hold the case's Bluetooth button for about 30 seconds to factory-reset the earbuds before connecting.
+3. Recommended: with the lid open, hold the case's Bluetooth button for about 30 seconds to factory-reset the earbuds.
+4. Put both earbuds in the charging case, **close the lid**, and connect the case to the computer with a USB cable. (Bose Updater itself requires the lid to be closed and will warn you if it is open.)
 
 ## Usage
 
@@ -36,7 +36,7 @@ This shows the device name, serial number and current version, plus the firmware
 
 **Step 2: flash**
 
-First **close every btu.bose.com browser tab**, then run:
+Run (you can keep btu.bose.com open in the browser; it shows the flashing progress in real time):
 
 ```
 python bose_reflash.py
@@ -53,11 +53,11 @@ Check the information, type `YES` (uppercase) and press Enter. Progress is print
 | 99% | Earbuds reboot, final confirmation |
 | 100% / finished | Done |
 
-**While flashing, never:** unplug the USB cable, close the case, take out the earbuds, quit Bose Updater, or let the computer sleep/shut down (don't close a laptop lid).
+**While flashing, never:** unplug the USB cable, open the lid, take out the earbuds, quit Bose Updater, or let the computer sleep/shut down (don't close a laptop lid).
 
 ## Afterwards
 
-1. Unplug the USB cable, put the earbuds back, close the lid for 10 seconds and open it again.
+1. Unplug the USB cable, keep the lid closed for 10 seconds, then open it.
 2. Check that the red/white flashing has stopped, then re-pair with your phone and test both earbuds.
 
 ## Options
@@ -72,7 +72,7 @@ Check the information, type `YES` (uppercase) and press Enter. Progress is print
 ## Troubleshooting
 
 - **Cannot reach the local Bose Updater**: make sure Bose Updater is running (tray icon), or open btu.bose.com once to start it.
-- **No earbuds detected (error -1043 etc.)**: both earbuds must be in the case with the lid open; try another USB cable/port.
+- **No earbuds detected (error -1043 etc.)**: both earbuds must be in the case with the lid closed; try another USB cable/port.
 - **Flashing error**: check the log `%TEMP%\BoseUpdater.log` (type `%TEMP%` in the Explorer address bar) and search for `Programming was successful` or `Error`.
 - If Bose changes the web endpoints, the script reads the latest settings from btu.bose.com automatically; if it still fails, the page script needs to be re-analyzed.
 

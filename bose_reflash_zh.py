@@ -92,7 +92,7 @@ def find_device(allow_any):
             break
         if i == 0:
             print(f"暂未检测到耳机（错误码 {error}），请确认：充电盒用 USB 连着电脑、"
-                  "两只耳机都在盒里、盒盖打开。等待中…")
+                  "两只耳机都在盒里、盒盖合上。等待中…")
         time.sleep(5)
     else:
         sys.exit("2 分钟内没有检测到 Bose 耳机，请检查连接后重试。")
@@ -145,7 +145,7 @@ def flash(info, fw):
             fileSize=meta["length"],
             callback="BoseUpdater.remoteCallback",
             token=token())
-    print("\n已开始刷写。全程约 40~60 分钟，期间不要拔线、不要合盖、不要让电脑休眠！\n")
+    print("\n已开始刷写。全程约 40~60 分钟，期间不要拔线、不要打开盒盖、不要让电脑休眠！\n")
     last, started, misses = None, False, 0
     while True:
         time.sleep(5)
@@ -193,7 +193,7 @@ def main():
         print("\n[--dry-run] 只做检测，未刷写。")
         return
     if not args.yes:
-        ans = input("\n确认刷写？请关闭浏览器里的 btu.bose.com 页面后输入 YES 继续：")
+        ans = input("\n确认刷写？输入 YES 继续（btu.bose.com 页面可以开着看进度）：")
         if ans.strip() != "YES":
             print("已取消。")
             return
